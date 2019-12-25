@@ -55,7 +55,7 @@ public final class UnsafeCursor< T extends NativeLongAccessType< T > > extends A
 
 	public UnsafeCursor( final UnsafeImg< T, ? > img )
 	{
-		super( img, 0, ( int ) img.size() );
+		super( img, 0, img.size() );
 	}
 
 	@Override
