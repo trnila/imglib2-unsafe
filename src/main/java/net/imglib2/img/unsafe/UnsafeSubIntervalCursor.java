@@ -66,7 +66,7 @@ public final class UnsafeSubIntervalCursor< T extends NativeLongAccessType< T > 
 	 * @param offset
 	 * @param size
 	 */
-	public UnsafeSubIntervalCursor( final UnsafeImg< T, ? > img, final int offset, final int size )
+	public UnsafeSubIntervalCursor( final UnsafeImg< T, ? > img, final long offset, final long size )
 	{
 		super( img, offset, size );
 	}
