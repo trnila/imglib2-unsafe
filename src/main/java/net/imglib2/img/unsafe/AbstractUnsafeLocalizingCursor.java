@@ -83,7 +83,7 @@ public abstract class AbstractUnsafeLocalizingCursor< T extends NativeLongAccess
 	 * Maximum of the {@link UnsafeImg} in every dimension. This is used to
 	 * check isOutOfBounds().
 	 */
-	protected final int[] max;
+	protected final long[] max;
 
 	/**
 	 * TODO Javadoc
@@ -101,7 +101,7 @@ public abstract class AbstractUnsafeLocalizingCursor< T extends NativeLongAccess
 
 		this.lastIndex = offset + size - 1;
 
-		max = new int[ n ];
+		max = new long[ n ];
 		for ( int d = 0; d < n; ++d )
 		{
 			position[ d ] = cursor.position[ d ];
@@ -132,9 +132,9 @@ public abstract class AbstractUnsafeLocalizingCursor< T extends NativeLongAccess
 		this.type = img.createLinkedType();
 		this.lastIndex = offset + size - 1;
 
-		max = new int[ n ];
+		max = new long[ n ];
 		for ( int d = 0; d < n; ++d )
-			max[ d ] = ( int ) img.max( d );
+			max[ d ] = img.max( d );
 
 		reset();
 	}
@@ -200,7 +200,7 @@ public abstract class AbstractUnsafeLocalizingCursor< T extends NativeLongAccess
 	@Override
 	public void jumpFwd( final long steps )
 	{
-		type.incIndex( ( int ) steps );
+		type.incIndex( steps );
 		IntervalIndexer.indexToPosition( type.getIndexLong(), img.dim, position );
 	}
 

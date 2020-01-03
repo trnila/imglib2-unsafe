@@ -6,10 +6,12 @@ import net.imglib2.img.NativeLongAccessImg;
 import net.imglib2.img.NativeLongAccessImgFactory;
 import net.imglib2.img.basictypelongaccess.ByteLongAccess;
 import net.imglib2.type.NativeLongAccessTypeFactory;
+import net.imglib2.type.NativeType;
+import net.imglib2.type.NativeTypeFactory;
 import net.imglib2.util.Fraction;
 import net.imglib2.util.Util;
 
-public class UnsignedByteLongAccessType extends GenericByteLongAccessType< UnsignedByteLongAccessType >
+public class UnsignedByteLongAccessType extends GenericByteLongAccessType< UnsignedByteLongAccessType > implements NativeType<UnsignedByteLongAccessType>
 {
 	// this is the constructor if you want it to read from an array
 	public UnsignedByteLongAccessType( final NativeLongAccessImg< ?, ? extends ByteLongAccess > img )
@@ -78,6 +80,31 @@ public class UnsignedByteLongAccessType extends GenericByteLongAccessType< Unsig
 	public UnsignedByteLongAccessType duplicateTypeOnSameNativeImg()
 	{
 		return new UnsignedByteLongAccessType( img );
+	}
+
+	@Override
+	public NativeTypeFactory<UnsignedByteLongAccessType, ?> getNativeTypeFactory() {
+	    throw new RuntimeException();
+	}
+
+	@Override
+	public void updateIndex(int i) {
+		updateIndex((long) i);
+	}
+
+	@Override
+	public int getIndex() {
+		return (int) getIndexLong();
+	}
+
+	@Override
+	public void incIndex(int increment) {
+		incIndex((long) increment);
+	}
+
+	@Override
+	public void decIndex(int decrement) {
+		decIndex((long) decrement);
 	}
 
 	@Override

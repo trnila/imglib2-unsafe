@@ -56,7 +56,7 @@ public final class UnsafeLocalizingSubIntervalCursor< T extends NativeLongAccess
 	 * @param offset
 	 * @param size
 	 */
-	protected UnsafeLocalizingSubIntervalCursor( final UnsafeImg< T, ? > img, final int offset, final int size )
+	protected UnsafeLocalizingSubIntervalCursor( final UnsafeImg< T, ? > img, final long offset, final long size )
 	{
 		super( img, offset, size );
 	}

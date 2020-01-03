@@ -66,7 +66,7 @@ public final class UnsafeLocalizingCursor< T extends NativeLongAccessType< T > >
 	 */
 	public UnsafeLocalizingCursor( final UnsafeImg< T, ? > img )
 	{
-		super( img, 0, ( int ) img.size() );
+		super( img, 0, img.size() );
 	}
 
 	/**

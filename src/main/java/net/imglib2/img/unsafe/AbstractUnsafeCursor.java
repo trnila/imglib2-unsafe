@@ -134,7 +134,7 @@ public abstract class AbstractUnsafeCursor< T extends NativeLongAccessType< T > 
 	@Override
 	public void jumpFwd( final long steps )
 	{
-		type.incIndex( ( int ) steps );
+		type.incIndex( steps );
 	}
 
 	@Override

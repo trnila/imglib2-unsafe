@@ -210,7 +210,7 @@ public class UnsafeImg< T extends NativeLongAccessType< T >, A > extends Abstrac
 
 		assert dimLength > 0;
 
-		return new UnsafeLocalizingSubIntervalCursor<>( this, ( int ) offset( interval ), ( int ) size( interval, dimLength ) );
+		return new UnsafeLocalizingSubIntervalCursor<>( this, offset( interval ), size( interval, dimLength ) );
 	}
 
 	/**
